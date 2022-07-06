@@ -8,11 +8,11 @@ app.use(cors())
 
 const url = 'https://plo.vn/an-sach-song-khoe/'
 
-app.get('/', function (req, res) {
-  res.json('This is my webscraper')
-})
+// app.get('/', function (req, res) {
+//   res.json('This is my webscraper')
+// })
 
-app.get('/results', (req, res) => {
+app.get('/', (req, res) => {
   axios(url)
     .then((response) => {
       const html = response.data
@@ -21,7 +21,7 @@ app.get('/results', (req, res) => {
 
       $('.story', html).each(function () {
         //<-- cannot be a function expression
-        const title = $(this).text()
+        const title = $(this).text().trim()
         const url = $(this).find('a').attr('href')
         const img = $(this).find('img').attr('data-src')
         articles.push({
