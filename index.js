@@ -6,7 +6,7 @@ const app = express()
 const cors = require('cors')
 app.use(cors())
 
-const url = 'https://plo.vn/an-sach-song-khoe/'
+const url = 'https://kynguyenso.plo.vn/'
 
 // app.get('/', function (req, res) {
 //   res.json('This is my webscraper')
